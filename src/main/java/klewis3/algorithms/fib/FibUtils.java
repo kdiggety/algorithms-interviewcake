@@ -1,4 +1,4 @@
-package klewis3.algorithms.utils;
+package klewis3.algorithms.fib;
 
 /**
  * @author klewis3
@@ -16,16 +16,18 @@ public class FibUtils {
 		Integer rc = 0;
 		
 		// Do work if we're looking for the n >= 3 number in the sequence
-		if (n >= 3) {
+		if (n > 3) {
 			Integer rc_1 = 1, rc_2 = 1; 
 			rc = 2;
-			for (int i = 3; i <= n; i++) {
+			for (int i = 4; i <= n; i++) {
 				rc = rc_1 + rc_2;
 				rc_2 = rc_1;
 				rc_1 = rc;
 			}
 		} else if (n > 0) { // Special case for the n=1 or n=2
 			rc = 1;
+		} else {
+			// Do nothing because we've defaulted to zero!
 		}
 		return rc;
 	}
